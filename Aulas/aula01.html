@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cabeçalhos, Parágrafos e Campo e Formulário</title>
+</head>
+<body>
+    <section>
+        <h1>Programa Olá Você</h1>
+        <form id="f">
+            <p>Nome:
+                <input type="text" id="Nome">
+                <input type="submit" value="Mostra">
+            </p>
+        </form>
+        <h3></h3>
+    </section>
+
+    <script>
+        const frm = document.querySelector("form");
+        //cria uma contate "frm" pra receber os valores do formulário
+        const res = document.querySelector("h3");
+        //cria uma constante "res" pra receber os valores de h3.
+
+        frm.addEventListener("submit", (e) =>{
+            const nome = frm.Nome.value
+            res.innerText =`Olá ${nome}`
+            e.preventDefault()
+        });
+    </script>
+    
+</body>
+</html>
