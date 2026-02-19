@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Integração com HTML</title>
+  </head>
+  <body>
+    <h1>Cine JS: filmes em cartaz</h1>
+    <form action="">
+      <p>
+        Título do filme:
+        <input type="text" id="inTitulo" required />
+      </p>
+      <p>
+        Dudação (min):
+        <input type="text" id="inDuracao" required />
+      </p>
+      <input type="submit" value="Converter Horas e minutos" />
+    </form>
+    <h3></h3>
+    <h4></h4>
+
+    <script>
+      const frm = document.querySelector("form");
+      const res1 = document.querySelector("h3");
+      const res2 = document.querySelector("h4");
+      //cria uma referencia entre os campos de entrada e "input(inDuracao) e os campos de resposta "h3 e h4".
+
+      frm.addEventListener("submit", (e) => {
+        const titulo = frm.inTitulo.value;
+        const duracao = Number(frm.inDuracao.value);
+        //cria um evento e duas costantes pra pegar os valores do campo de input "inTitulo e inDuraco"
+
+        const horas = Math.floor(duracao / 60);
+        const minutos = duracao % 60;
+        //cria as constantes "horas e minutos" e pega os valores da contante duracao e faz as operacoes .
+
+        res1.innerText = titulo;
+        res2.innerText = {}`${horas} horsa(s) e ${minutos} minutos(s)`;
+        //pega so valores das operacoes na constates "horas e minuto" e imprime nas telas "h3(res1) e h4(res2)"
+
+        e.preventDefault();
+        //evta o envio de form
+      });
+    </script>
+  </body>
+</html>

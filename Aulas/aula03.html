@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integração com HTML</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Façã seu cadastro</h1>
+    <form action="">
+        <p>
+            Nome:
+            <input type="text" id="inome" required>
+        </p>
+        <p>
+            Email:
+            <input type="email" id="iemail" required>
+        </p>
+
+        <input type="submit" value="enviar">
+    </form>
+    <h2></h2>
+    <h3></h3>
+
+    <script>
+        const frm = document.querySelector("form")
+        const res1 = document.querySelector("h2")
+        const res2 = document.querySelector("h3")
+        //criar as constates "frm , res1 , res2" pra receber os valores das caixas de input e h2 e h3 .
+
+        frm.addEventListener("submit" , (e)=>{
+            const nom = frm.inome.value
+            const ema = frm.iemail.value
+
+            res1.innerText= nom
+            res2.innerText = ema
+
+            e.preventDefault();
+        })
+    </script>
+    
+</body>
+</html>
