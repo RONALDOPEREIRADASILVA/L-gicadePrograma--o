@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integração com HTML</title>
+</head>
+<body>
+    <h1>Cadastro de Times</h1>
+    <form action="">
+        <p>
+            Cadastre seu Time:
+            <input type="text" id="itime" required>
+        </p>
+        <p>
+            Quantidade de Jogadores:
+            <input type="number" id="iquantidade" required>
+        </p>
+        <p>
+            Classificação (serie):
+            <input type="text" id="iserie">
+
+        </p>
+        <input type="submit" id="" value="Enviar">
+    </form>
+    <h2></h2>
+    <h3></h3>
+    <h4></h4>
+
+    <script>
+        const frm = document.querySelector("form")
+        const res1 = document.querySelector("h2")
+        const res2 = document.querySelector("h3")
+        const res3 = document.querySelector("h4")
+
+        frm.addEventListener("submit" , (e) =>{
+            const time = frm.itime.value
+            const quan = Number( frm.iquantidade.value)
+            const clas = frm.iserie.value
+
+            res1.innerText= time
+            res2.innerText =` Cadastrou ${quan} jogadores `
+            res3.innerText =`Serie ${clas}` 
+
+            e.preventDefault()
+        })
+    </script>
+</body>
+</html>
