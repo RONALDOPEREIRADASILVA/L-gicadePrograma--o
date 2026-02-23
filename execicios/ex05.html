@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de Programação e Algoritimo com Javascript</title>
+</head>
+<body>
+   
+    <h1>Revenda de Veículo</h1>
+    <form action="">
+        
+        <p>
+            Veiculo:
+            <input type="text" id="inveiculo" required>
+        </p>
+        <p>
+            Preço R$:
+            <input type="number" id="inpreco" required>
+        </p>
+        <input type="submit" value="Ver Promoção">
+    </form>
+    <h3 id="outres1"></h3>
+    <h3 id="outres2"></h3>
+    <h3 id="outres3"></h3>
+
+    <script>
+    /* 
+    Elaborar um programa para uma revenda de veículos. O programa deve ler modelo e preço 
+    do veículo .Apresentar como resposta  o valor da entrada (50%) e o saldo em 12x .
+    */
+        const frm = document.querySelector("form")
+        const res1 = document.querySelector("#outres1")
+        const res2 = document.querySelector("#outres2")
+        const res3 = document.querySelector("#outres3")
+
+        frm.addEventListener("submit", (e) =>{
+            const veiculo = frm.inveiculo.value
+            const preco = Number(frm.inpreco.value)
+
+            const entrada = preco * 0.50
+            const parcela = (preco * 0.50) / 12
+
+            res1.innerText = `Promoção: ${veiculo}`
+            res2.innerText = `Entrada: ${entrada.toFixed(2)}`
+            res3.innerText = `+12 vezes de: ${parcela.toFixed(2)}`
+
+            e.preventDefault();
+        })
+    </script>
+
+</body>
+</html>
