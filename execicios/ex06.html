@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programa para Restaurant</title>
+  </head>
+  <body>
+    <h1>Restaurante</h1>
+    <form>
+      <p>
+        Buffet por Quilos R$:
+        <input type="number" id="inquilos" min="0" step="0.01" required />
+      </p>
+      <p>
+        Consumo do cliente(gr):
+        <input type="number" id="inconsumo" min="0" required />
+      </p>
+
+      <input type="submit" value="Calcular Preço" />
+    </form>
+    <h3></h3>
+    <script>
+      /*
+         Elaborar um programa para um restaurante qu leia preço por kg eo consumo em gramas de um cliente.Exiba o valor a ser pago.
+        */
+      const frm = document.querySelector("form");
+      const res = document.querySelector("h3");
+
+      frm.addEventListener("submit", (e) => {
+        const preco = Number(frm.inquilos.value);
+        const consu = Number(frm.inconsumo.value);
+
+        const valor = (preco / 1000) * consu;
+
+        res.innerText = `Valor a pagar é R$: ${valor.toFixed(2)}`;
+
+        e.preventDefault();
+      });
+    </script>
+  </body>
+</html>
