@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    <h1>Faça seu Cadastro</h1>
+        <form>
+            <p>
+                Digite seu nome:
+                <input type="text" class="nome" id="idnome" required/>
+            </p>
+            <p>
+                Digite seu telefone:
+                <input type="number" class="telefone" id="idtelefone" required>
+            </p>
+            
+                <input type="submit" value="Enviad">
+            
+        </form>
+    
+        
+            <h3 id="res1">vai aparecer aqui</h3>
+            <h3 id="res2">vai aparecer aqui</h3res>
+
+    <script>
+    const frm = document.querySelector("form");
+    const result1 = document.querySelector("#res1");
+    const result2 = document.querySelector("#res2");
+
+    frm.addEventListener("submit", (e) =>{
+        const name = frm.idnome.value;
+        const telef = Number(frm.idtelefone.value);
+
+        result1.innerText =`Meu nome é; ${name}`;
+        result2.innerText =`Telefone: ${telef}`;
+
+        e.preventDefault();
+
+    })
+      
+
+    </script>
+    
+</body>
+</html>
