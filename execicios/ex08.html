@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produtos</title>
+</head>
+<body>
+    <h1>Cadastrar Produtos</h1>
+    <form>
+        <p>
+            Nome do Produto:
+            <input type="text" id="idprodutos" required>
+        </p>
+        <p>
+            Valor do Produto:
+            <input type="number" step="0.01" id="idvalor" required>
+        </p>
+        <p>
+            Quantidade:
+            <input type="number" id="idquantidade">
+        </p>
+        <input type="submit" value="Enviar">
+    </form>
+    <h3 id="res1">A</h3>
+    <h3 id="res2">B</h3>
+    <h3 id="res3">C</h3>
+
+    <script>
+    const frm =document.querySelector("form")
+    const resp1 =document.querySelector("res1")
+    const resp2 = document.querySelector("res2")
+    const resp3 =document.querySelector("res3")
+    
+    frm.addEventListener("submit",(e) => {
+        const noProduto = frm.idprodutos.value
+        const vaProduto = Number(frm.idvalor.value)
+        const quaProdut = Number(frm.idquantidade.value)
+
+        resp1.innerText =noProduto
+        resp2.innerText=vaProduto
+        resp3.innerText =quaProdut
+
+        //const procad = [noProduto,vaProduto, quaProdut]
+       // procad =[];
+        //console.log(procad)
+        e.preventDefault();
+    });
+    </script>
+    
+</body>
+</html>
