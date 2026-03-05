@@ -28,9 +28,9 @@
 
     <script>
     const frm =document.querySelector("form")
-    const resp1 =document.querySelector("res1")
-    const resp2 = document.querySelector("res2")
-    const resp3 =document.querySelector("res3")
+    const resp1 =document.querySelector("#res1")
+    const resp2 = document.querySelector("#res2")
+    const resp3 =document.querySelector("#res3")
     
     frm.addEventListener("submit",(e) => {
         const noProduto = frm.idprodutos.value
@@ -40,10 +40,6 @@
         resp1.innerText =noProduto
         resp2.innerText=vaProduto
         resp3.innerText =quaProdut
-
-        //const procad = [noProduto,vaProduto, quaProdut]
-       // procad =[];
-        //console.log(procad)
         e.preventDefault();
     });
     </script>
