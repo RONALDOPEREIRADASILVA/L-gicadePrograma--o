@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Execício 10</title>
+</head>
+<body>
+    <h1>Lan House JS</h1>
+    <form>
+        <p>
+            Valor por 15min de Uso R$:
+            <input type="number" placeholder="3.00" step="0.01" id="idvalor" required>
+        </p>
+        <p>
+            Tempo De Uso do Cliente:
+            <input type="number" placeholder="25" step="0.01" id="idtempo" required>
+        </p>
+        <input type="submit" value="Calcular o Valor a Pagar">
+    </form>
+    <h2></h2>
+
+    <script>
+        /*
+        Elaborar um programa de uma lan house de um aeroporto - O programa deve ler o valor de cada 15 munutos.Informe o valor a ser pago pelo cliente m
+        sabendo que as frações estra de 15minutos devem ser cobradas de forma integral.
+        */
+        const frm = document.querySelector("form")
+        const res = document.querySelector("h2")
+        frm.addEventListener("submit" , (e)=>{
+        const vminu =Number(frm.idvalor.value)
+        const tempo = Number(frm.idtempo.value)
+        
+        const  vApaga =Math.ceil(tempo/ 15) * vminu
+        
+        res.innerText= `Valor a Pagar R$: ${vApaga.toFixed(2)}`;
+
+        e.preventDefault();
+
+        })
+        
+    </script>
+    
+</body>
+</html>
