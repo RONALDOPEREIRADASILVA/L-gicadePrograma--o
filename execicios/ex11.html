@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Execício 11</title>
+</head>
+<body>
+    <h1>Supermercado JS</h1>
+    <form>
+        <p>
+            Produtos:
+            <input type="text" placeholder="Creme Dental" id="idproduto" required>
+        </p>
+        <p>
+            Preço R$:
+            <input type="number" placeholder="2.00" id="idpreco" required>
+        </p>
+        <input type="submit" value="Ver promoção">
+    </form>
+    <h3 id="re1"></h3>
+    <h3 id="re2"></h3>
+
+
+    <script>
+        /*
+        Um supermercado está com uma promoção -Para aumentar suas vendas
+        no setor de higiene ,cada etiqueta de produto deve exibir uma menssagem anuciando 50% de desconto(para um item) na compra de três unidades do produto. Elabore um programa que leia descrição e preço de um produto. Após apresente as mensagens indicando a promoção.
+        */
+        const frm = document.querySelector("form")
+        const res1 = document.querySelector("#re1")
+        const res2 = document.querySelector("#re2")
+
+        frm.addEventListener("submit", (e) =>{
+            const produ = frm.idproduto.value
+            const prec = Number(frm.idpreco.value)
+            const desc = prec * 0.50
+            const promo = (prec * 2) + (prec * 0.50)
+
+            res1.innerText = `${produ} Promoção: leve 3 por R$: ${promo.toFixed(2)}`
+            res2.innerText=`O 3 produto custa apenas R$:${desc.toFixed(2)}`
+
+            e.preventDefault();
+        })
+
+    </script>
+</body>
+</html>
