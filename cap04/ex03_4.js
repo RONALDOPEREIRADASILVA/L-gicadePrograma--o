@@ -1,5 +1,5 @@
 /*
-Sabendo que o fuso ho´rarioda frança em relação ao Brasil é de + 5 horas (no horário de verão na frança ), elabore um programa que leia a hora no Brasil e informe na França .
+Sabendo que o fuso hórarioda frança em relação ao Brasil é de + 5 horas (no horário de verão na frança ), elabore um programa que leia a hora no Brasil e informe na França .
 */
 
 const frm =document.querySelector("form")
