@@ -23,7 +23,7 @@ frm.addEventListener("submit" , (e)=>{
     
      if(veloCond<= multaLeve ){
         res.innerText=` Sua velocidade é :${veloCond} Multa Leve`
-    }else if(veloCond>=multaLeve ) {
+    }else {
         res.innerText = `Sua velocidade é :${veloCond} Multa Grave`
     }
 })
