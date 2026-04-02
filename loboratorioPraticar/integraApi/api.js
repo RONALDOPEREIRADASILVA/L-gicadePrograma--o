@@ -1,6 +1,6 @@
 /*
-Aproveitando pra praticar consumo de API com (fetch)
-
+*Aproveitando pra praticar consumo de API com (fetch)
+*A API que usei foi (jsonplaceholder)
 */
 
 const frm = document.querySelector("form");
