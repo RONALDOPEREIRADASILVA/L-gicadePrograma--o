@@ -9,9 +9,9 @@ Digamos que o número de chinchilas de uma fazenda triplicar a cada ano, após o
     const nunChichila = Number(frm.idnumero.value);
     const ano = Number(frm.idnumero2.value);
     let respoata ="";
-    let total = nunChichila;
+    let total = nunChichila;//começa com o valor que o usuário digitou
 
-    for(let i = 1; i <= ano; i++){
+    for(let i = 1; i <= ano; i++){//Olaço conta de um até o limite de anos.
         if(i>1){
             total = total * 3
         }
