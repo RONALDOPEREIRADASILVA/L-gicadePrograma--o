@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa Jogo Descubra um Número</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <img src="img/img-programa.png" class="normal" alt="imagem de programa ">
+    <h1>Jogo Descubra um Número</h1>
+    <form action="">
+        <p>
+            número:
+            <input type="number" id="idnumero" min="1" max="100" required autofocus>
+            <input type="submit" id="btsubmit" value="Aposta">
+            <input type="button" id="btnovo" value="Joga Novamente" class="oculta">
+        </p>
+        <h3>Erros: <span id="iderros">0</span></h3>
+        <h3>Chances: <span id="idchance">6</span></h3>
+        <h3 id="iddica" class="italico">É UM Número Entre 1 e 100</h3>
+        <script src="ex2_6.js"></script>
+    </form>
+</body>
+</html>
