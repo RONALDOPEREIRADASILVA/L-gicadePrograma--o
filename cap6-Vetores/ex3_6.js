@@ -10,10 +10,7 @@ const res = document.querySelector("pre");
     frm.idmodelo.value="";
     frm.idpreco.value="";
     idmodelo.focus();
-
     frm.btLista.dispatchEvent(new Event("click"));
-
-
   })
   frm.btLista.addEventListener("click",()=>{
     if(carros.length==0){
@@ -21,7 +18,6 @@ const res = document.querySelector("pre");
       return
     }
     const lista=carros.reduce((acumulador, carro) => acumulador + carro.modelo + "-R$:" + carro.preco.toFixed(2) + "\n" , "")
-
     res.innerText = `Lista dos carros cadastrados\n${"-".repeat(40)}\n${lista}`
   })
   frm.btFiltrar.addEventListener("click", () =>{
@@ -40,4 +36,19 @@ const res = document.querySelector("pre");
     }
     res.innerText=`Carros Até  R$:${maximo.toFixed(2)}\n${"-".repeat(40)}\n${lista}`
   
+  })
+  frm.btSimular.addEventListener("click", ()=>{
+    const desconto = Number(prompt("Qual o percentual de desconto:"))
+    if(desconto==0 || isNaN(desconto)){
+      return
+    }
+    const carrosDescon=carros.map(aux =>({
+      modelo:aux.modelo,
+    preco:aux.preco - ( aux.preco * desconto / 100)
+    }))
+    let lista="";
+    for(const carro of carrosDescon){
+      lista += `${carro.modelo} - R$: ${carro.preco.toFixed(2)}\n`
+    }
+    res.innerText=` Carros com desconto: ${desconto}%\n${"-".repeat(40)}\n${lista}`
   })
